@@ -1,0 +1,166 @@
+/*11) Give a maximum width to the body and center it in the page  x
+12) Set every h1 to be centered     x
+13) Change the color of each link in the page xx
+14) Create a class with a border  x
+15) Set table to have rounded corners x
+16) Add margin between every paragraph  x
+17) Create a class which change font size and boldness  x
+18) Create a class to hide a content  x
+19) Add a green border to each td   x
+20) Add a dotted red border to each tr (note: tr does not accept a border property ;-) ) x */
+
+/*general*/
+body{
+    margin: 0;
+    padding:0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+h1{
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding:20px;
+}
+a{
+    color: #000;
+}
+.border{
+    border: 2px solid #4C061D;
+}
+p{
+    margin:10px;
+}
+.styleFonts{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.hide{
+    display: none;
+}
+tr{
+    border: 3px dotted red!important;
+}
+td{
+    border: 2px solid green;
+}
+/*navbar*/
+ol{
+    display: flex;
+    width:100%;
+    background-color: #4C061D;
+    margin-top:0;
+    text-align: center;
+}
+ol li{
+    color:white;
+    padding: 10px;
+    list-style: none;
+    font-size:25px;
+    font-weight: 500;
+}
+
+/*table*/
+table{
+    box-shadow: 10px 10px 10px 8px #8888886e;
+    border-radius:4px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+.tableImages{
+    max-width:290px;
+    transition: all ease .7s;
+}
+
+.tableImages:hover {
+    webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+
+/*container*/
+.container2{
+    background-color: #fff;
+    box-shadow: 10px 10px 10px 8px #8888886e;
+    width: 650px;
+    margin: 0 auto;
+    border-right: 4px solid #4C061D;
+    border-radius: 4px;
+    padding:10px;
+}
+ul{
+    list-style:none;
+    font-size:20px;
+    font-weight:500px;
+}
+footer.footer{
+    margin-top: 5rem;
+    height: 100%;
+    background:#4C061D;
+    position: relative;
+    text-align:center;
+}
+
+footer.footer .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+footer.footer .container > div{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 3rem .9rem;
+}
+
+
+
+@media(max-width: 768px){
+
+    footer.footer .container{
+        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    table{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    td{
+        display: block;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .tableImages{
+        max-width:290px;
+        display: block;
+    }
+
+    ol{
+        display: flex;
+        width:100%;
+        background-color: #4C061D;
+        margin-top:0;
+        text-align: center;
+        margin-left: 0;
+        padding-left: 0;
+        justify-content: center;
+    }
+    ol li{
+        text-align: center;
+        color:white;
+        padding: 7px;
+        list-style: none;
+        font-size:20px;
+        font-weight: 500;
+    }
+   }
