@@ -64,7 +64,7 @@ ol li{
 }
 
 /*table*/
-table{
+.tableElement{
     box-shadow: 10px 10px 10px 8px #8888886e;
     border-radius:4px;
     text-align: center;
@@ -118,8 +118,23 @@ footer.footer .container > div{
     flex-basis: 0;
     padding: 3rem .9rem;
 }
+button{
+    border: 2px solid #4C061D;
+    background-color: transparent;
+    color: #4C061D;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all ease .7s;
+}
 
-
+button:hover{
+    border: 2px solid #4C061D;
+    background-color: #4C061D;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all ease .7s;
+}
 
 @media(max-width: 768px){
     .container2{
@@ -137,7 +152,7 @@ footer.footer .container > div{
         flex-direction: column;
         overflow-x: hidden;
     }
-    table{
+    .tableElement{
         text-align: center;
         justify-content: center;
         align-items: center;

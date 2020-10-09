@@ -172,15 +172,57 @@ links.addEventListener("onmouseover", () => { showAlert}, false);
                }else{
                 images[i].classList.remove("hide");
             }
-          console.log(images[i].classList.value)
     }
   }
         //43) Add a button to hide and show the table from the page
+        let hideTable =()=>{
+            let table= document.querySelector("table");
+            
+             if(table.classList.value==="tableElement"){
+                 table.classList.add("hide");
+                }else{
+                 table.classList.remove("hide");
+             }
+     }
+   
        // 44) Write a function to sum every number inside the TD (if the content is numeric)
-       // 45) Delete the last letter from the title each time the user clicks on it
+
+    // 45) Delete the last letter from the title each time the user clicks on it
+    let heading = document.querySelector("h1");
+    let newheading;
+    const removeLastLetter=()=>{
+    newheading = heading.innerText.slice(0, -1);
+    heading.innerText= newheading;
+}
+
+
        // 46) Change a single TD background color when the user clicks on it
+
       //  47) Add a button DELETE, on click it should delete a random TD from the page
+        const deleteTd=()=>{
+            let tdElements = [];
+            tdElements= document.querySelectorAll("td");
+            var item = tdElements[Math.floor(Math.random() * tdElements.length)];
+            item.remove()
+        }
+
        // 48) Add a pink border to a cell when the mouse is over it
        // 49) Write a function to add a table with 4 rows and 3 columns programmatically
+       const addRowandCells=()=>{
+           let body= document.querySelector("body");
+           let table = document.createElement("table");
+           body.appendChild(table);
+            let cols=[];
+            let rows=[];
+            for(let i=0; i<3; i++){
+                rows[i] = document.createElement("tr");
+                table.appendChild(rows[i]);
+            }
+       }
+
+     
        // 50) Write a function to remove the table from the page
-    
+   let deleteTable =()=>{
+            let table= document.querySelector("table");      
+           table.remove()
+     }
