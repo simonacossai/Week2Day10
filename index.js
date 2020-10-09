@@ -196,7 +196,7 @@ links.addEventListener("onmouseover", () => { showAlert}, false);
 }
 
 
-       // 46) Change a single TD background color when the user clicks on it
+// 46) Change a single TD background color when the user clicks on it
 
       //  47) Add a button DELETE, on click it should delete a random TD from the page
         const deleteTd=()=>{
@@ -209,15 +209,18 @@ links.addEventListener("onmouseover", () => { showAlert}, false);
        // 48) Add a pink border to a cell when the mouse is over it
        // 49) Write a function to add a table with 4 rows and 3 columns programmatically
        const addRowandCells=()=>{
-           let body= document.querySelector("body");
-           let table = document.createElement("table");
-           body.appendChild(table);
-            let cols=[];
-            let rows=[];
-            for(let i=0; i<3; i++){
-                rows[i] = document.createElement("tr");
-                table.appendChild(rows[i]);
-            }
+        let body = document.querySelector('body')
+        let table = document.createElement('table')
+        for(let x=0; x<4; x++){
+          let row = document.createElement('tr')
+          for(let y=0; y<3; y++){
+            let cell = document.createElement('td')
+            cell.innerText = y
+            row.appendChild(cell)
+          }
+          table.appendChild(row)
+        }
+        body.appendChild(table)
        }
 
      
