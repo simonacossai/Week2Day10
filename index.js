@@ -2,7 +2,7 @@
         21) Given variable x = "John" and y = "Doe", write on the console log "John <> Doe"*/
 let x= "John";
 let y= "Doe";
-console.log(x+ " <> "+ y);
+//console.log(x+ " <> "+ y);
 
        // 22) Create an object with properties such name, surname, email
     let person ={
@@ -15,7 +15,7 @@ console.log(x+ " <> "+ y);
 
        // 25) Print in the console every string in the previous array
        for(let i=0; i<myArray.length; i++){
-           console.log("My "+[i]+ " favourite fruit is "+ myArray[i]);
+           //console.log("My "+[i]+ " favourite fruit is "+ myArray[i]);
        }
 
        // 26) Create an array with 100 random numbers in it
@@ -24,12 +24,12 @@ console.log(x+ " <> "+ y);
            let random= Math.round(Math.random()*1000);
            randomNumbers.push(random);
        }
-console.log(randomNumbers)
+//console.log(randomNumbers)
 
        // 27) Wrote a function to get the MAX and the MIN from the previously created array
        let min = Math.min.apply(Math, randomNumbers)   
        let max =Math.max.apply(Math, randomNumbers)
-       console.log(min, max) 
+      // console.log(min, max) 
       //  28) Create an array of arrays, in which every array has 10 random numbers
       var matrix = [];
       for(var i=0; i<3; i++) {
@@ -83,26 +83,98 @@ const getBiggerArray=()=>{
             return ("array 2: "+ Array2)
         }
     }
-    console.log(getBiggerSum());
+    //console.log(getBiggerSum());
     
        // DOM 
        // 31) Get element with ID "container" from the page
     let containerElement = document.querySelector("#container");
-
        // 32) Get every "td" from the page
+let tdArray=[];
+tdArray = document.querySelectorAll("td");
+console.log(tdArray)
 
-       
        // 33) Create a cycle that prints the text inside every td of the page
+    for(i=0; i<tdArray.length; i++){
+       // console.log(tdArray[i].innerHTML);
+    }
+
        // 34) Write a function to change the heading of the page
+       const changeHeading =(string)=>{
+            let heading = document.querySelector("h1");
+            heading.innerText= string;
+       }
+
        // 35) Write a function to add an extra row to the table
+       const addRow =()=>{
+           let row = document.createElement("tr");
+           let table=document.querySelector("table");
+        table.appendChild(row);
+       }
+
        // 36) Write a function to add the class "test" to each row in the table
+
+       const addClass =()=>{
+           let rows=[];
+            rows= document.querySelectorAll("tr");
+            for(let i=0; i<rows.length; i++){
+                rows[i].classList.add("test");
+            }
+       }
       //  37) Write a function to add a red background to every link in the page
+       const addRedBackground=()=>{
+        let links=[];
+        links = document.querySelectorAll("a");
+        for(i=0; i<links.length; i++){
+            links[i].style.backgroundColor="red";
+        }
+       }
        // 38) Console log "Page loaded" when the page is correctly loaded
+       window.onload= function (){
+        console.log("page loaded");
+       }
+           
        // 39) Write a function to add new items to a UL
+       const addNewItem=(string)=>{
+           let ulList = document.querySelector("ul");
+           let liElement= document.createElement("li");
+            liElement.innerText = string;
+            ulList.appendChild(liElement);
+       }
        // 40) Write a function to empty a list
+
+       const clearList =()=>{
+           let ulList = document.querySelector("ul");
+           ulList.remove();
+       }
        //EXTRA 
        // 41) Add an eventListener to alert when the mouse is over a link, displaying the URL
+      
+    
+    showAlert=()=>{
+        let links =[];
+        links = document.querySelectorAll("a");
+        for(i=0; i<links.length; i++){
+        alert(links[i].href);
+    } 
+links.addEventListener("onmouseover", showAlert)
+links.addEventListener("onmouseover", () => { showAlert}, false);
+}
+
        // 42) Add a button to hide every image on the page
+
+       let hideButton =()=>{
+           let images=[];
+           images= document.querySelectorAll("img");
+           console.log(images)
+           for(let i=0; i<images.length; i++){
+            if(images[i].classList.value==="tableImages"){
+                images[i].classList.add("hide");
+               }else{
+                images[i].classList.remove("hide");
+            }
+          console.log(images[i].classList.value)
+    }
+  }
         //43) Add a button to hide and show the table from the page
        // 44) Write a function to sum every number inside the TD (if the content is numeric)
        // 45) Delete the last letter from the title each time the user clicks on it
